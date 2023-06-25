@@ -1,0 +1,47 @@
+<div class="container">
+    <!-- Tabs Titles -->
+    <!-- <h2 class="active"> Sign In </h2> -->
+    <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+    <!-- Icon -->
+    <!-- <div class="fadeIn first">
+        <img src="../../assets/logiImage.jpg" id="icon" alt="User Icon" />
+      </div> -->
+    <div class="container" style="margin-top: 10px;">
+        <div class="card" style="width: 100%;background: rgb(225, 208, 241);">
+            <div class="card-body">
+                <h5 class="card-title">Apply Leaves Here</h5>
+                <p class="card-text"></p>
+            </div>
+        </div>
+    </div>
+    <!-- Pop UP -->
+    <div class="container" style="margin-top: 10px;">
+        <form>
+            <div class="col-12" style="margin: 5px;">
+                <label>Start Date</label>
+                <div class="input-group">
+                    <input type="date" class="form-control" name ="startDate" placeholder="yyyy-mm-dd" [min]="minDate"  [(ngModel)]="startDate"/>
+                    <!-- <button class="btn btn-outline-secondary bi bi-calendar3" (click)="start.toggle()" -->
+                        <!-- type="button"></button> -->
+                </div>
+            </div>
+            <div class="col-12" style="margin: 5px;">
+                <label>End Date</label>
+                <div class="input-group">
+                    <input type="date" class="form-control" name="endDate" placeholder="yyyy-mm-dd" name="end" [min]="minDate" [(ngModel)]="endDate"/>
+                </div>
+            </div>
+            <div class="col-12" style="margin: 5px;">
+                <label>Reason</label>
+                <div class="input-group">
+                    <textarea type="text" class="form-control" name="reason" placeholder="Reason" [(ngModel)]="reason"></textarea>
+                </div>
+            </div>
+        </form>
+        <div class="container" style="margin-bottom: 10px;">
+            <button type="button" class="btn btn-primary" (click)="apply()">Apply</button>
+            <button type="button" class="btn btn-light" (click)="close()">Cancle</button>
+        </div>
+    </div>
+</div>

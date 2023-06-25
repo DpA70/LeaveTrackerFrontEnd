@@ -1,0 +1,25 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+      <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../../assets/logiImage.jpg" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form [formGroup]="loginForm">
+        <div *ngIf="badCredentials" class="alert alert-warning" role="alert" style="width: 80%;margin-left: 50px;margin-top: 10px;">
+          Bad Credentials !!
+        </div>        
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name" formControlName="userName">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" formControlName="password">
+        <input type="submit" class="fadeIn fourth" value="Log In" (click)="OnClick()">
+      </form>
+  
+    </div>
+  </div>
+
+  

@@ -1,0 +1,54 @@
+<div class="container" style="margin-top: 10px;">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">ADMIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user">Apply Leave</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">ADMIN </h5>
+            <p class="card-text">UserName : {{login.getUser().username}}<br>
+                Name : {{login.getUser().firstName}}
+                {{login.getUser().lastName}}({{login.getUser().empId}})
+                <br>Email : {{login.getUser().email}}
+            </p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 50px;width: 30%;margin-bottom: 20px">
+    <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" [(ngModel)]="filterText"
+            aria-describedby="search-addon" />
+        <!-- <button type="button" class="btn btn-outline-primary">search</button> -->
+    </div>
+</div>
+
+<div class="container" >
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Leave From</th>
+            <th scope="col">To</th>
+            <th scope="col">Reason</th>
+          </tr>
+        </thead>
+        <tbody  *ngFor="let leaves of allLeaves">
+          <tr>
+            <th scope="row">{{leaves.empId}}</th>
+            <td>{{leaves.firstName}} {{leaves.lastName}}</td>
+            <td>{{leaves.startDate}}</td>
+            <td>{{leaves.endDate}}</td>
+            <td>{{leaves.reason}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

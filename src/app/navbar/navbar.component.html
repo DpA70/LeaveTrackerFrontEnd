@@ -1,0 +1,12 @@
+<nav class="navbar bg-primary" data-bs-theme="dark">
+    <!-- Navbar content -->
+    <a class="navbar-brand" routerLink="/login" style="margin-left: 10px;color:rgb(211, 228, 243)">
+      <img src="../../assets/ctsLogo.png" width="30" height="30" class="d-inline-block align-top" alt="Icon" >
+      Leave Tracker App
+    </a>
+    <span class="navbar-text" *ngIf="login.isUserLoggedIn()" style="margin-right: 10px;">
+    {{login.getUser().firstName}} {{login.getUser().lastName}} ({{login.getUser().empId}})
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </span>
+
+</nav>

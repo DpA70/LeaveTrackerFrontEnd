@@ -1,0 +1,38 @@
+<!-- <div class="container">
+    <h2>EMP ID : {{login.getUser().empId}}</h2>
+    <h2>Name : {{login.getUser().firstName}} {{login.getUser().lastName}}</h2>
+</div> -->
+<div class="container" style="margin-top: 10px;">
+    <div class="card mb-3" style="max-width: 100%; background-color: rgb(255, 255, 255);">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="../../assets/employee.jpg" class="card-img" alt="..." style="height: 180px;width: 180px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">UserName : {{login.getUser().username}}</h5>
+                    <p class="card-text">Name : {{login.getUser().firstName}}
+                        {{login.getUser().lastName}}({{login.getUser().empId}})
+                        <br>Email : {{login.getUser().email}}
+                    </p>
+                    <span class="badge badge-pill badge-warning" style="background: red;">Leaves Remaining : 12</span>
+                    <div style="margin-top: 10px;">
+                        <button type="button" class="btn btn-primary" (click)="open()">Apply</button>
+                        <button *ngIf="login.getUserRole() == 'ADMIN'" type="button" class="btn btn-primary" routerLink="/admin" style="margin-left: 5px;">Admin Tab</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div *ngFor="let emp of empAllLeaves" class="card" style="width: 18rem;display: inline-block;margin: 5px;">
+        <div class="card-body">
+          <p class="card-title">From : {{emp.startDate}}</p>
+          <p class="card-title">To : {{emp.endDate}}</p>
+          <p class="card-text">{{emp.reason}}</p>
+          <button class="btn btn-danger" [hidden]="emp.deleteButton" (click)="deleteLeave(emp.id)">Delete</button>
+        </div>
+      </div>
+</div>
